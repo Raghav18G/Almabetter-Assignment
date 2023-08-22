@@ -6,3 +6,13 @@
 .bg-login-image {
   background-image: url('/path/to/login-image.jpg'); /* Replace with your image URL */
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Style of the thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #1A3B583D;
+  border-radius: 10px;
+}

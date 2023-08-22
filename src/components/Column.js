@@ -1,18 +1,25 @@
 // src/components/Column.js
-import React from 'react';
-import { useDrop } from 'react-dnd';
-import Task from './Task';
+import React from "react";
+import { useDrop } from "react-dnd";
+import Task from "./Task";
 
-const Column = ({ title, tasks, onDrop }) => {
+const Column = ({ title, tasks, onDrop, count }) => {
   const [, drop] = useDrop({
-    accept: 'TASK',
+    accept: "TASK",
     drop: onDrop,
   });
 
   return (
-    <div ref={drop} className="bg-gray-100 p-4 rounded-md shadow-md">
-      <h2 className="text-lg font-semibold mb-4">{title}</h2>
-      {tasks.map(task => (
+    <div
+      ref={drop}
+      className="bg-columnBg h-80vh rounded-md shadow-md w-64 mx-12 p-4 overflow-auto overflow-x-hidden scrollbar-thin scrollbar-track-gray"
+    >
+      <div className="flex justify-between">
+        <h2 className="text-lg font-semibold mb-4">{title}</h2>
+        <p className="text-green-dark w-4 p-2">{count}</p>
+      </div>
+
+      {tasks.map((task) => (
         <Task key={task.id} task={task} />
       ))}
     </div>
