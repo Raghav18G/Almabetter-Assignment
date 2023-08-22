@@ -5,10 +5,16 @@ import React from "react";
 
 const Dashboard = () => {
   return (
-    <div className="flex bg-primary">
+    <div className="flex bg-primary w-full overflow-hidden">
       {" "}
-      <Sidebar />
-      <Projects />
+      <div className="w-1/6">
+        {" "}
+        <Sidebar />
+      </div>
+      <div className="w-5/6">
+        {" "}
+        <Projects />
+      </div>
     </div>
   );
 };

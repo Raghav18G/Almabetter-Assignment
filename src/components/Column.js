@@ -12,7 +12,7 @@ const Column = ({ title, tasks, onDrop, count }) => {
   return (
     <div
       ref={drop}
-      className="bg-columnBg h-80vh rounded-md shadow-md w-64 mx-12 p-4 overflow-auto overflow-x-hidden scrollbar-thin scrollbar-track-gray"
+      className="bg-columnBg h-80vh rounded-md shadow-md w-60 mx-12 p-4 overflow-auto overflow-x-hidden scrollbar-thin scrollbar-track-gray"
     >
       <div className="flex justify-between">
         <h2 className="text-lg font-semibold mb-4">{title}</h2>

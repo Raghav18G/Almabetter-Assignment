@@ -13,12 +13,12 @@ import LogOut from "../../public/images/LogOut.svg";
 
 const Sidebar = () => {
   return (
-    <aside className="bg-white w-1/5 h-screen text-dark p-4 border-r-[3px] border-gray  ">
+    <aside className="bg-white  h-screen text-dark p-4 border-r-[3px] border-gray  ">
       <div className="fixed">
         {" "}
         <Image src={Logo} />
       </div>
-      <div className="flex-col space-y-52">
+      <div className="flex-col space-y-36">
         <div className="mt-16">
           <ul className="space-y-2 flex-row items-left m-4 text-content">
             <li className="flex mt-8 text-xl gap-4">
