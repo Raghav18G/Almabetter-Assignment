@@ -10,8 +10,11 @@ import Chat from "../../public/images/Chat.svg";
 import Calendar from "../../public/images/Calendar.svg";
 import Settings from "../../public/images/Settings.svg";
 import LogOut from "../../public/images/LogOut.svg";
+import { useDispatch } from "react-redux";
+import { clearUser } from "@/redux/auth/authSlice";
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
   return (
     <aside className="bg-white  h-screen text-dark p-4 border-r-[3px] border-gray  ">
       <div className="fixed">
@@ -61,7 +64,12 @@ const Sidebar = () => {
                 Settings
               </a>
             </li>
-            <li className="flex mt-8 text-xl gap-4">
+            <li
+              className="flex mt-8 text-xl gap-4"
+              onClick={() => {
+                dispatch(clearUser());
+              }}
+            >
               <Image src={LogOut} />
               <a href="#" className="hover:text-dark ml-4 my-2">
                 Log out

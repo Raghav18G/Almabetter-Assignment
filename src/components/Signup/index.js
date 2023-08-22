@@ -1,4 +1,8 @@
+import { setUser } from "@/redux/auth/authSlice";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -8,12 +12,22 @@ const Signup = () => {
     rememberMe: false,
   });
 
+  const dispatch = useDispatch();
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = event.target;
     // If the input type is a checkbox, update the checked property
     const newValue = type === "checkbox" ? checked : value;
     console.log("CHANGING name", name);
     setFormState((prev) => ({ ...prev, [name]: newValue }));
+  };
+
+  const router = useRouter();
+  const handleSignUp = (e) => {
+    dispatch(setUser(formState));
+    setTimeout(() => {
+      router.push("/Dashboard");
+    }, 1000);
   };
 
   return (
@@ -66,7 +80,7 @@ const Signup = () => {
       <div className="mb-4">
         <button
           className="w-full bg-blue-500 text-white p-2 rounded"
-          // onClick={handleLogin}
+          onClick={handleSignUp}
         >
           Sign up
         </button>

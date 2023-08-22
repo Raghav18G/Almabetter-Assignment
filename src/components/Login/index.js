@@ -51,7 +51,7 @@ const Login = () => {
         <label className="">
           <input
             type="checkbox"
-            className="w-full p-2 border-grayfield border-2 rounded-md"
+            className="p-2 border-grayfield border-2 rounded-md"
             name="rememberMe"
             checked={formState.rememberMe}
             onChange={handleInputChange}
