@@ -9,6 +9,7 @@ const Dashboard = () => {
     <div>
       <PrivateRoute>
         {" "}
+        
         <div className="flex bg-primary w-full overflow-hidden">
           {" "}
           <div className="w-1/6">
