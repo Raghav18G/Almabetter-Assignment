@@ -24,25 +24,25 @@ const Sidebar = () => {
       <div className="flex-col space-y-36">
         <div className="mt-16">
           <ul className="space-y-2 flex-row items-left m-4 text-content">
-            <li className="flex mt-8 text-xl gap-4">
+            <li className="flex mt-8 text-lg gap-2">
               <Image src={Home} />
               <a href="#" className="hover:text-dark ml-4 my-2 ">
                 Overview
               </a>
             </li>
-            <li className="flex mt-8 text-xl gap-4">
+            <li className="flex mt-8 text-lg gap-2">
               <Image src={Stats} />
               <a href="#" className="hover:text-dark ml-4 my-2">
                 Stats
               </a>
             </li>
-            <li className="flex mt-8 text-xl gap-4">
+            <li className="flex mt-8 text-lg gap-2">
               <Image src={Chat} />
               <a href="#" className="hover:text-dark  ml-4 my-2">
                 Chat
               </a>
             </li>
-            <li className="flex mt-8 text-xl gap-4 border-r-green-dark">
+            <li className="flex mt-8 text-lg gap-2 border-r-green-dark">
               <Image src={Projects} />
               <a href="#" className="text-dark  ml-4 my-2 ">
                 Projects
