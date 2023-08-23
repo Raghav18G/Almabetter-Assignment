@@ -30,6 +30,7 @@ const Login = () => {
           type="email"
           name="email"
           placeholder="Email"
+          required
           className="w-full p-2 border-grayfield border-2 rounded-md"
           value={formState.email}
           onChange={handleInputChange}
@@ -43,6 +44,7 @@ const Login = () => {
           placeholder="Password"
           className="w-full p-2 border-grayfield border-2 rounded-md"
           value={formState.password}
+          required
           onChange={handleInputChange}
         />
       </div>

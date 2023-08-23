@@ -45,6 +45,7 @@ const Signup = ({ setActiveTab }) => {
             type="text"
             name="fullName"
             placeholder="Full Name"
+            required
             className="w-full p-2 border-grayfield border-2 rounded-md"
             value={formState.fullName}
             onChange={handleInputChange}
@@ -57,6 +58,7 @@ const Signup = ({ setActiveTab }) => {
             placeholder="Email"
             className="w-full p-2 border-grayfield border-2 rounded-md"
             value={formState.email}
+            required
             onChange={handleInputChange}
           />
         </div>
@@ -68,6 +70,7 @@ const Signup = ({ setActiveTab }) => {
             placeholder="Password"
             className="w-full p-2 border-grayfield border-2 rounded-md"
             value={formState.password}
+            required
             onChange={handleInputChange}
           />
         </div>

@@ -42,9 +42,9 @@ const Sidebar = () => {
                 Chat
               </a>
             </li>
-            <li className="flex mt-8 text-xl gap-4">
+            <li className="flex mt-8 text-xl gap-4 border-r-green-dark">
               <Image src={Projects} />
-              <a href="#" className="hover:text-dark  ml-4 my-2">
+              <a href="#" className="text-dark  ml-4 my-2 ">
                 Projects
               </a>
             </li>
