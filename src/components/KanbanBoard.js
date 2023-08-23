@@ -57,6 +57,24 @@ const mockData = {
 const KanbanBoard = () => {
   const [columns, setColumns] = useState(mockData.columns);
 
+  const addTasks = (e, data, columnID) => {
+    e.preventDefault();
+    console.log("BEFORe ADDING Columns", columns);
+
+    const updatedColumns = columns.map((column) => {
+      if (column.id === "todo") {
+        console.log("COLUMN ID in Add task", columnID);
+        return {
+          ...column,
+          tasks: [...column.tasks, data],
+        };
+      }
+      return column;
+    });
+
+    setColumns(updatedColumns);
+  };
+
   console.log("Columns", columns);
 
   const handleDrop = (itemId, targetColumnId) => {
@@ -77,16 +95,19 @@ const KanbanBoard = () => {
     setColumns(updatedColumns);
   };
 
+  console.log("Columns", columns);
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="flex justify-center p-8">
         {columns.map((column) => (
           <Column
             key={column.id}
+            ID={column.id}
             title={column.title}
             tasks={column.tasks}
             onDrop={(item) => handleDrop(item.id, column.id)}
             count={column.tasks.length}
+            addTasks={addTasks}
           />
         ))}
       </div>

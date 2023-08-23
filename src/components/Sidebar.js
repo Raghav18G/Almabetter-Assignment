@@ -16,7 +16,7 @@ import { clearUser } from "@/redux/auth/authSlice";
 const Sidebar = () => {
   const dispatch = useDispatch();
   return (
-    <aside className="bg-white  h-screen text-dark p-4 border-r-[3px] border-gray  ">
+    <aside className="bg-white  text-dark p-4 border-r-[3px] border-gray  ">
       <div className="fixed">
         {" "}
         <Image src={Logo} />

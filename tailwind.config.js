@@ -23,6 +23,7 @@ module.exports = {
           light: "#ECF3F3",
         },
         primary: "#FEFEFE",
+        buttonBg: "#329C89",
       },
       height: {
         inherit: "inherit",

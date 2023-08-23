@@ -1,13 +1,27 @@
 // src/components/Column.js
-import React from "react";
+import React, { useState } from "react";
 import { useDrop } from "react-dnd";
 import Task from "./Task";
+import AddTaskDrawer from "./AddTaskDrawer";
 
-const Column = ({ title, tasks, onDrop, count }) => {
+const Column = ({ title, tasks, onDrop, count, addTasks, ID }) => {
   const [, drop] = useDrop({
     accept: "TASK",
     drop: onDrop,
   });
+
+  const [isOpen, setIsOpen] = useState(false);
+  console.log("KEY in COLUMN", ID);
+
+  const openDrawer = (e) => {
+    e.preventDefault();
+    setIsOpen(true);
+  };
+
+  const closeDrawer = (e) => {
+    e.preventDefault;
+    setIsOpen(false);
+  };
 
   return (
     <div
@@ -18,10 +32,28 @@ const Column = ({ title, tasks, onDrop, count }) => {
         <h2 className="text-lg font-semibold mb-4">{title}</h2>
         <p className="text-green-dark w-4 p-2">{count}</p>
       </div>
+      <button
+        onClick={openDrawer}
+        className="text-green-dark bg-green-light w-full p-2 rounded-md mb-4"
+      >
+        {" "}
+        + Add
+      </button>
 
       {tasks.map((task) => (
         <Task key={task.id} task={task} />
       ))}
+      {isOpen && (
+        <div>
+          <AddTaskDrawer
+            isOpen={isOpen}
+            openDrawer={openDrawer}
+            closeDrawer={closeDrawer}
+            addTasks={addTasks}
+            key={ID}
+          />
+        </div>
+      )}
     </div>
   );
 };

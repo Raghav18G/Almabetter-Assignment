@@ -1,5 +1,6 @@
 import React from "react";
 import KanbanBoard from "./KanbanBoard";
+import AddTaskDrawer from "./AddTaskDrawer";
 
 const Projects = () => {
   return (

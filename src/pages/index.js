@@ -6,7 +6,7 @@ import Login from "../components/Login";
 import Signup from "../components/Signup";
 
 const HomePage = () => {
-  const [activeTab, setActiveTab] = useState("Login");
+  const [activeTab, setActiveTab] = useState("signup");
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -38,7 +38,11 @@ const HomePage = () => {
           </li>
         </ul>
         <hr className="w-2/3 m-4" />
-        {activeTab === "login" ? <Login /> : <Signup />}
+        {activeTab === "login" ? (
+          <Login />
+        ) : (
+          <Signup setActiveTab={setActiveTab} />
+        )}
       </div>
     </div>
   );
