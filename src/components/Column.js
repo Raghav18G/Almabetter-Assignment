@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useDrop } from "react-dnd";
 import Task from "./Task";
 import AddTaskDrawer from "./AddTaskDrawer";
+import Popup from "./Popup";
 
 const Column = ({ title, tasks, onDrop, count, addTasks, ID }) => {
   const [, drop] = useDrop({
@@ -43,6 +44,7 @@ const Column = ({ title, tasks, onDrop, count, addTasks, ID }) => {
       {tasks.map((task) => (
         <Task key={task.id} task={task} />
       ))}
+
       {isOpen && (
         <div>
           <AddTaskDrawer
